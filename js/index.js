@@ -95,3 +95,35 @@ gsap.from([featureBanner, featureBannerGreen], {
     amount: 0.2,
   },
 });
+
+const featuresTl = gsap.timeline();
+
+featuresTl
+  .from([featuresContentTitle, featuresContentP, featuresContentButton], {
+    opacity: 0,
+    y: 40,
+    duration: 0.6,
+    ease: "powe3.out",
+    stagger: {
+      amount: 0.2,
+    },
+  })
+  .from(featuresList, {
+    delay: -0.4,
+    opacity: 0,
+    y: 40,
+    duration: 0.6,
+    ease: "power3.out",
+    stagger: {
+      amount: 0.4,
+    },
+  });
+
+const controller = new ScrollMagic.Controller();
+const scene = new ScrollMagic.Scene({
+  triggerElement: "#featureBannerGreen",
+  triggerHook: 0,
+  reverse: false,
+})
+  .setTween(featuresTl)
+  .addTo(controller);
