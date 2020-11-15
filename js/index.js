@@ -127,3 +127,6 @@ const scene = new ScrollMagic.Scene({
 })
   .setTween(featuresTl)
   .addTo(controller);
+
+// footer
+document.getElementById("year").innerHTML = new Date().getFullYear();
