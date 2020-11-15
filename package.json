@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "watch": "node-sass --watch css/style.scss css/style.css",
-    "build": "nodemon --exec babel-node ./js/* ",
+    "watch": "node-sass --watch dist/css/style.scss dist/css/style.css",
+    "build": "nodemon --exec babel-node ./dist/js/* ",
     "start": "concurrently \"npm run watch\" \"npm run build\""
   },
   "author": "",
